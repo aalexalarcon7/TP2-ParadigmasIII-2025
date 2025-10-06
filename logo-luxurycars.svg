@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 360 96">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#c9c2a6"></stop>
+      <stop offset="1" stop-color="#a89c7d"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="360" height="96" fill="none"></rect>
+  <path d="M32 48c30-26 62-26 92 0-30 26-62 26-92 0z" fill="url(#g)" opacity="0.25"></path>
+  <path d="M30 60c32-22 64-22 96 0" fill="none" stroke="url(#g)" stroke-width="2"></path>
+  <text x="190" y="58" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" fill="url(#g)" letter-spacing="1.5">Luxury Car's</text>
+</svg>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ficha – Auto | Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container wrap">
+      <a class="brand" href="index.html"><img src="logo-luxurycars.svg" alt=""><span>Luxury Car's</span></a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
+<nav id="mainnav" class="nav">…</nav>
+
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="listado_tabla.html">Productos (Tabla)</a>
+        <a href="listado_box.html">Productos (Grid)</a>
+        <a href="comprar.html">Comprar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2 id="auto-name">Cargando...</h2>
+    <p class="lead" id="auto-description">Cargando...</p>
+
+    <div class="product" style="margin-top:14px">
+      <div class="gallery">
+        <img id="auto-image" src="img/hero.jpg" alt="Auto seleccionado">
+      </div>
+      <aside class="meta">
+        <p class="price" style="font-size:22px" id="auto-price">Cargando...</p>
+        <a class="btn" href="comprar.html">Comprar</a>
+        <a class="btn secondary" style="margin-left:8px" href="mailto:ventas@luxurycars.test">Consultar</a>
+        <ul class="specs" id="auto-specs">
+        </ul>
+      </aside>
+    </div>
+
+    <section class="section" style="padding-top:28px">
+      <h2>Descripción</h2>
+      <p id="auto-long-description">Cargando...</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="logo-luxurycars.svg" alt="" style="height:24px"><strong></strong>
+      </div>
+      <small>© 2025</small>
+    </div>
+  </footer>
+
+  <script>
+    // Base de datos de los autos
+    const autos = {
+      vantage: {
+        name: "Aston Martin Vantage 2023",
+        description: "Coupé deportivo, poder y lujo.",
+        price: "USD 220.000",
+        image: "img/vantage.jpg",
+        specs: [
+          { label: "Motor", value: "V8 4.0L" },
+          { label: "Potencia", value: "510 hp" },
+          { label: "Torque", value: "685 Nm" },
+          { label: "0–100 km/h", value: "3.6 s" },
+          { label: "Transmisión", value: "Automática de 8 velocidades" },
+          { label: "Tracción", value: "Trasera" },
+          { label: "Consumo", value: "12.6 L/100km" },
+          { label: "Color", value: "Satin Solar Bronze Brillante" }
+        ],
+        longDescription: "El Aston Martin Vantage 2023 combina un diseño impresionante con un rendimiento sobresaliente, ideal para los amantes de la velocidad y el lujo."
+      },
+      continental: {
+        name: "Bentley Continental GT 2023",
+        description: "Coupé gran turismo con W12 de 6.0L. Lujo artesanal y performance.",
+        price: "USD 280.000",
+        image: "img/continental.jpg",
+        specs: [
+          { label: "Motor", value: "W12 6.0L" },
+          { label: "Potencia", value: "626 hp" },
+          { label: "Torque", value: "900 Nm" },
+          { label: "0–100 km/h", value: "3.7 s" },
+          { label: "Transmisión", value: "Automática 8 vel" },
+          { label: "Tracción", value: "AWD" },
+          { label: "Consumo mixto", value: "10,6 L/100km (ref.)" },
+          { label: "Color", value: "Sequin Blue" }
+        ],
+        longDescription: "El Continental GT combina confort de viaje con capacidades deportivas. Interior artesanal y tecnologías de asistencia de última generación."
+      },
+      bentayga: {
+        name: "Bentley Bentayga 2022",
+        description: "SUV de lujo, potencia sin límites.",
+        price: "USD 300.000",
+        image: "img/bentayga.jpg",
+        specs: [
+          { label: "Motor", value: "V8 4.0L" },
+          { label: "Potencia", value: "542 hp" },
+          { label: "Torque", value: "770 Nm" },
+          { label: "0–100 km/h", value: "4.5 s" },
+          { label: "Transmisión", value: "Automática de 8 velocidades" },
+          { label: "Tracción", value: "AWD" },
+          { label: "Consumo", value: "13.0 L/100km" },
+          { label: "Color", value: "Grey" }
+        ],
+        longDescription: "El Bentley Bentayga 2022 es el SUV de lujo definitivo. Con un motor potente y un diseño elegante, este vehículo es ideal para quienes buscan lo mejor en confort y rendimiento."
+      },
+      db11: {
+        name: "Aston Martin DB11 2022",
+        description: "Lujo y confort con la potencia que distingue a Aston Martin.",
+        price: "USD 260.000",
+        image: "img/db11.jpg",
+        specs: [
+          { label: "Motor", value: "V12 5.2L" },
+          { label: "Potencia", value: "600 hp" },
+          { label: "Torque", value: "700 Nm" },
+          { label: "0–100 km/h", value: "3.9 s" },
+          { label: "Transmisión", value: "Automática de 8 velocidades" },
+          { label: "Tracción", value: "Trasera" },
+          { label: "Consumo", value: "11.5 L/100km" },
+          { label: "Color", value: "Bitono White & Black" }
+        ],
+        longDescription: "El DB11 2022 combina tecnología de vanguardia con un diseño icónico, perfecto para quienes buscan lujo y rendimiento."
+      },
+      dbx707: {
+        name: "Aston Martin DBX 707 2023",
+        description: "SUV de alto rendimiento, lujo sin igual.",
+        price: "USD 330.000",
+        image: "img/dbx707.jpg",
+        specs: [
+          { label: "Motor", value: "V8 4.0L" },
+          { label: "Potencia", value: "707 hp" },
+          { label: "Torque", value: "900 Nm" },
+          { label: "0–100 km/h", value: "3.3 s" },
+          { label: "Transmisión", value: "Automática de 9 velocidades" },
+          { label: "Tracción", value: "AWD" },
+          { label: "Consumo", value: "14.0 L/100km" },
+          { label: "Color", value: "Cosmos Orange" }
+        ],
+        longDescription: "El DBX 707 es el SUV más potente de Aston Martin, diseñado para ofrecer lujo y una experiencia de conducción incomparable."
+      },
+      flyingspur: {
+        name: "Bentley Flying Spur 2023",
+        description: "Una berlina de lujo con un motor de alta gama.",
+        price: "USD 310.000",
+        image: "img/flyingspur.jpg",
+        specs: [
+          { label: "Motor", value: "V8 4.0L" },
+          { label: "Potencia", value: "542 hp" },
+          { label: "Torque", value: "770 Nm" },
+          { label: "0–100 km/h", value: "4.1 s" },
+          { label: "Transmisión", value: "Automática de 8 velocidades" },
+          { label: "Tracción", value: "AWD" },
+          { label: "Consumo", value: "12.5 L/100km" },
+          { label: "Color", value: "Midnight Emerald" }
+        ],
+        longDescription: "El Flying Spur 2023 lleva la experiencia de lujo y confort de Bentley a un nuevo nivel, ofreciendo rendimiento, estilo y comodidad de primera clase."
+      }
+    };
+
+    // Obtiene el auto desde los parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    const autoId = params.get("auto"); // 'auto' es el nombre del parámetro 
+
+    // Si no da un parámetro de auto se vuelve a la página de inicio
+    if (!autoId || !autos[autoId]) {
+      window.location.href = "index.html"; // vuelve al inicio si no se encuentra el auto
+    }
+
+    // Rellena los datos del auto
+    const auto = autos[autoId];
+    document.getElementById("auto-name").textContent = auto.name;
+    document.getElementById("auto-description").textContent = auto.description;
+    document.getElementById("auto-price").textContent = auto.price;
+    document.getElementById("auto-image").src = auto.image;
+
+    // Rellen las especificaciones
+    const specsList = document.getElementById("auto-specs");
+    auto.specs.forEach(spec => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${spec.label}:</strong> ${spec.value}`;
+      specsList.appendChild(li);
+    });
+
+    document.getElementById("auto-long-description").textContent = auto.longDescription;
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo (Grid) – Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container wrap">
+    <a class="brand" href="index.html">
+      <img src="logo-luxurycars.svg" alt="Logo Luxury Car's">
+      <span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
+    <nav id="mainnav" class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="listado_tabla.html">Productos (Tabla)</a>
+      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="comprar.html">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>Catálogo — Vista en tarjetas</h2>
+  <p class="lead">Inspirado en la estética de Aston Martin y Bentley: sobrio, legible y elegante.</p>
+
+  <!-- CONTROLES: solo búsqueda + ordenar -->
+  <div class="container" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px">
+    <input id="q" type="search" placeholder="Buscar modelo o marca…" style="flex:1;min-width:220px" autocomplete="off" spellcheck="false">
+    <select id="sort">
+      <option value="">Ordenar</option>
+      <option value="price-asc">Precio: menor a mayor</option>
+      <option value="price-desc">Precio: mayor a menor</option>
+    </select>
+  </div>
+
+  <div class="grid" style="margin-top:18px">
+    <!-- EXISTENTES -->
+    <article class="card">
+      <img class="media" src="img/vantage.jpg" alt="Aston Martin Vantage 2023">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">Vantage 2023</h3>
+        <p class="price">USD 220.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=vantage">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/db11.jpg" alt="Aston Martin DB11 2022">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">DB11 2022</h3>
+        <p class="price">USD 260.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=db11">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/continental.jpg" alt="Bentley Continental GT 2023">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Continental GT 2023</h3>
+        <p class="price">USD 280.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=continental">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/bentayga.jpg" alt="Bentley Bentayga 2022">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Bentayga 2022</h3>
+        <p class="price">USD 300.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=bentayga">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/dbx707.jpg" alt="Aston Martin DBX 707">
+      <div class="body">
+        <span class="tag">Aston Martin</span>
+        <h3 class="title">DBX 707</h3>
+        <p class="price">USD 330.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=dbx707">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/flyingspur.jpg" alt="Bentley Flying Spur 2023">
+      <div class="body">
+        <span class="tag">Bentley</span>
+        <h3 class="title">Flying Spur 2023</h3>
+        <p class="price">USD 310.000</p>
+        <div class="actions">
+          <a class="btn" href="producto.html?auto=flyingspur">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- NUEVOS -->
+    <article class="card">
+      <img class="media" src="img/roma.jpg" alt="Ferrari Roma 2024">
+      <div class="body">
+        <span class="badge new">Nuevo</span>
+        <span class="tag">Ferrari</span>
+        <h3 class="title">Roma 2024</h3>
+        <p class="price">USD 270.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_roma.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/911turbo.jpg" alt="Porsche 911 Turbo S 2024">
+      <div class="body">
+        <span class="badge new">Nuevo</span>
+        <span class="tag">Porsche</span>
+        <h3 class="title">911 Turbo S 2024</h3>
+        <p class="price">USD 240.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_911turbo.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/cullinan.jpg" alt="Rolls-Royce Cullinan 2024">
+      <div class="body">
+        <span class="badge new">Nuevo</span>
+        <span class="tag">Rolls-Royce</span>
+        <h3 class="title">Cullinan 2024</h3>
+        <p class="price">USD 355.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_cullinan.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/sf90.jpg" alt="Ferrari SF90 Stradale 2024">
+      <div class="body">
+        <span class="badge new">Nuevo</span>
+        <span class="tag">Ferrari</span>
+        <h3 class="title">SF90 Stradale 2024</h3>
+        <p class="price">USD 490.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_sf90.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/aventador.jpg" alt="Lamborghini Aventador 2022">
+      <div class="body">
+        <span class="tag">Lamborghini</span>
+        <h3 class="title">Aventador 2022</h3>
+        <p class="price">USD 400.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_aventador.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/gwagon.jpg" alt="Mercedes-AMG G 63 2024">
+      <div class="body">
+        <span class="tag">Mercedes-Benz</span>
+        <h3 class="title">AMG G 63 2024</h3>
+        <p class="price">USD 180.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_gwagon.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img class="media" src="img/urus.jpg" alt="Lamborghini Urus 2024">
+      <div class="body">
+        <span class="tag">Lamborghini</span>
+        <h3 class="title">Urus 2024</h3>
+        <p class="price">USD 260.000</p>
+        <div class="actions">
+          <a class="btn" href="producto_urus.html">Ver ficha</a>
+          <a class="link" href="comprar.html">Comprar</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="logo-luxurycars.svg" alt="" style="height:24px"><strong></strong>
+    </div>
+    <small>© 2025</small>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+<script>
+/* === Búsqueda en GRID (prefijo, sin acentos) + reflow siempre === */
+(function(){
+  const grid  = document.querySelector('.grid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const baseOrder = cards.slice();                 // orden original
+  const $q    = document.getElementById('q');     // input búsqueda
+  const $sort = document.getElementById('sort');  // ordenar (opcional)
+
+  const norm = s => (s||'')
+    .toString().toLowerCase()
+    .normalize('NFD').replace(/\p{Diacritic}/gu,'')  // quita acentos
+    .trim();
+
+  const searchText = c => norm(
+    (c.querySelector('.tag')?.textContent || '') + ' ' +
+    (c.querySelector('.title')?.textContent || '')
+  );
+
+  const priceOf = c => +(c.querySelector('.price')?.textContent.replace(/[^\d]/g,'') || 0);
+
+  function apply(){
+    const qv = norm($q?.value || '');
+    let visibles = [];
+    let ocultas  = [];
+
+    // filtrar (prefijo por palabra)
+    for (const c of cards){
+      if (!qv){
+        c.hidden = false;
+        visibles.push(c);
+        continue;
+      }
+      const hay = searchText(c);
+      const ok  = hay.split(/[\s-]+/).some(w => w.startsWith(qv)); // con 1 letra ya filtra
+      c.hidden = !ok;
+      (ok ? visibles : ocultas).push(c);
+    }
+
+    // ordenar visibles
+    if ($sort && $sort.value){
+      visibles.sort((a,b) => $sort.value === 'price-asc' ? priceOf(a) - priceOf(b)
+                                                         : priceOf(b) - priceOf(a));
+    } else {
+      // mantengo el orden original cuando no hay orden elegido
+      visibles.sort((a,b) => baseOrder.indexOf(a) - baseOrder.indexOf(b));
+    }
+
+    // re-apendo SIEMPRE para forzar reflow (soluciona que no aparezcan sin ordenar)
+    const frag = document.createDocumentFragment();
+    visibles.forEach(v => frag.appendChild(v));
+    ocultas.forEach(o => frag.appendChild(o));
+    grid.appendChild(frag);
+
+    // Estado vacío
+    const idEmpty = 'gridEmptyMsg';
+    let empty = document.getElementById(idEmpty);
+    if (visibles.length === 0){
+      if (!empty){
+        empty = document.createElement('p');
+        empty.id = idEmpty;
+        empty.className = 'muted';
+        empty.textContent = 'Sin resultados para ese término.';
+        grid.parentNode.insertBefore(empty, grid.nextSibling);
+      }
+    } else if (empty){
+      empty.remove();
+    }
+  }
+
+  ['input','keyup','change'].forEach(ev => {
+    $q?.addEventListener(ev, apply);
+    $sort?.addEventListener(ev, apply);
+  });
+
+  apply();
+})();
+</script>
+
+</body>
+</html>

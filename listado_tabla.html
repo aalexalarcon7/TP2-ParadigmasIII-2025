@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Listado (Tabla) – Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="navbar">
+  <div class="container wrap">
+    <!-- LOGO -->
+    <a class="brand" href="index.html">
+      <img src="logo-luxurycars.svg" alt="Logo Luxury Car's">
+      <span></span>
+    </a>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
+
+    <!-- MENÚ -->
+    <nav id="mainnav" class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="listado_tabla.html">Productos (Tabla)</a>
+      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="comprar.html">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="container section">
+    <h2>Listado de productos — Tabla</h2>
+    <p class="lead">Vista tipo concesionaria con columnas clave. Podés buscar, filtrar o ordenar los resultados.</p>
+
+<!-- CONTROLES (Tabla) — Solo una búsqueda -->
+<div class="toolbar" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0">
+  <input id="qTabla" type="search" placeholder="Buscar modelo o marca…"
+         autocomplete="off" spellcheck="false" style="flex:1;min-width:260px">
+  <select id="sortTabla">
+    <option value="">Ordenar</option>
+    <option value="price-asc">Precio: menor a mayor</option>
+    <option value="price-desc">Precio: mayor a menor</option>
+  </select>
+</div>
+
+    <!-- Tabla -->
+    <div class="table-wrap">
+      <table class="products">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Motor</th>
+            <th>0–100 km/h</th>
+            <th>Transmisión</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr data-brand="Aston Martin" data-name="Vantage 2023" data-price="220000">
+            <td>Aston Martin</td><td>Vantage</td><td>2023</td><td>V8 4.0</td><td>3.6 s</td><td>AT</td>
+            <td>USD 220.000</td><td><span class="badge">Disponible</span></td>
+            <td><a class="btn" href="producto_vantage.html">Ver ficha</a></td>
+          </tr>
+
+          <tr data-brand="Aston Martin" data-name="DB11 2022" data-price="260000">
+            <td>Aston Martin</td><td>DB11</td><td>2022</td><td>V12 5.2</td><td>3.9 s</td><td>AT</td>
+            <td>USD 260.000</td><td><span class="badge">Reservado</span></td>
+            <td><a class="btn" href="producto_db11.html">Ver ficha</a></td>
+          </tr>
+
+          <tr data-brand="Bentley" data-name="Continental GT 2023" data-price="280000">
+            <td>Bentley</td><td>Continental GT</td><td>2023</td><td>W12 6.0</td><td>3.7 s</td><td>AT</td>
+            <td>USD 280.000</td><td><span class="badge">Disponible</span></td>
+            <td><a class="btn" href="producto_continental.html">Ver ficha</a></td>
+          </tr>
+
+          <tr data-brand="Bentley" data-name="Bentayga 2022" data-price="300000">
+            <td>Bentley</td><td>Bentayga</td><td>2022</td><td>V8 4.0</td><td>4.5 s</td><td>AT</td>
+            <td>USD 300.000</td><td><span class="badge">Disponible</span></td>
+            <td><a class="btn" href="producto_bentayga.html">Ver ficha</a></td>
+          </tr>
+
+          <tr data-brand="Aston Martin" data-name="DBX 707" data-price="330000">
+            <td>Aston Martin</td><td>DBX 707</td><td>2023</td><td>V8 4.0</td><td>3.3 s</td><td>AT</td>
+            <td>USD 330.000</td><td><span class="badge">Disponible</span></td>
+            <td><a class="btn" href="producto_dbx707.html">Ver ficha</a></td>
+          </tr>
+
+          <tr data-brand="Bentley" data-name="Flying Spur 2023" data-price="310000">
+            <td>Bentley</td><td>Flying Spur</td><td>2023</td><td>V8 4.0</td><td>4.1 s</td><td>AT</td>
+            <td>USD 310.000</td><td><span class="badge">Disponible</span></td>
+            <td><a class="btn" href="producto_flyingspur.html">Ver ficha</a></td>
+          </tr>
+
+        <tr data-brand="Ferrari" data-name="Roma 2024" data-price="270000">
+          <td>Ferrari</td><td>Roma</td><td>2024</td><td>V8 3.9L</td><td>3.4 s</td><td>AT</td>
+          <td>USD 270.000</td><td><span class="badge">Disponible</span></td>
+          <td><a class="btn" href="producto_roma.html">Ver ficha</a></td>
+        </tr>
+
+<tr data-brand="Porsche" data-name="911 Turbo S 2024" data-price="240000">
+  <td>Porsche</td><td>911 Turbo S</td><td>2024</td><td>Bóxer 3.8L</td><td>2.7 s</td><td>AT</td>
+  <td>USD 240.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_911turbo.html">Ver ficha</a></td>
+</tr>
+<tr data-brand="Rolls-Royce" data-name="Cullinan 2024" data-price="355000">
+  <td>Rolls-Royce</td><td>Cullinan</td><td>2024</td><td>V12 6.75L</td><td>5.2 s</td><td>AT</td>
+  <td>USD 355.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_cullinan.html">Ver ficha</a></td>
+</tr>
+<tr data-brand="Ferrari" data-name="SF90 Stradale 2024" data-price="490000">
+  <td>Ferrari</td><td>SF90 Stradale</td><td>2024</td><td>V8 + Híbrido</td><td>2.5 s</td><td>AT</td>
+  <td>USD 490.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_sf90.html">Ver ficha</a></td>
+</tr>
+<tr data-brand="Lamborghini" data-name="Aventador 2022" data-price="400000">
+  <td>Lamborghini</td><td>Aventador</td><td>2022</td><td>V12 6.5L</td><td>2.8 s</td><td>AT</td>
+  <td>USD 400.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_aventador.html">Ver ficha</a></td>
+</tr>
+<tr data-brand="Mercedes-Benz" data-name="AMG G 63 2024" data-price="180000">
+  <td>Mercedes-Benz</td><td>AMG G 63</td><td>2024</td><td>V8 4.0L</td><td>4.5 s</td><td>AT</td>
+  <td>USD 180.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_gwagon.html">Ver ficha</a></td>
+</tr>
+<tr data-brand="Lamborghini" data-name="Urus 2024" data-price="260000">
+  <td>Lamborghini</td><td>Urus</td><td>2024</td><td>V8 4.0L</td><td>3.6 s</td><td>AT</td>
+  <td>USD 260.000</td><td><span class="badge">Disponible</span></td>
+  <td><a class="btn" href="producto_urus.html">Ver ficha</a></td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="logo-luxurycars.svg" alt="Logo" style="height:24px" />
+        <strong></strong>
+      </div>
+      <small>© 2025. Proyecto académico.</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+
+<script>
+/* === Buscador/Orden en TABLA (prefijo, sin acentos) === */
+(function(){
+  const table = document.getElementById('tablaAutos') || document.querySelector('table');
+  if (!table || !table.tBodies.length) return;
+
+  const tbody = table.tBodies[0];
+  const rows  = Array.from(tbody.rows);
+
+  const $q    = document.getElementById('qTabla');    // input de búsqueda
+  const $sort = document.getElementById('sortTabla'); // ordenar por precio (opcional)
+
+  const norm = s => (s||'')
+    .toString().toLowerCase()
+    .normalize('NFD').replace(/\p{Diacritic}/gu,'')   // quita acentos
+    .trim();
+
+  const rowText = row => norm(Array.from(row.cells).map(td => td.textContent).join(' '));
+
+  function matchesRow(row, q){
+    const nq = norm(q);
+    if (!nq) return true;
+    // prefijo por palabra (con una letra ya filtra)
+    return rowText(row).split(/\s+/).some(w => w.startsWith(nq));
+  }
+
+  function getPrice(row){
+    // busca la celda que contiene “USD …”
+    const priceCell = Array.from(row.cells).find(td => /usd/i.test(td.textContent));
+    return +(priceCell?.textContent.replace(/[^\d]/g,'') || 0);
+  }
+
+  function apply(){
+    const qv = $q?.value || '';
+    rows.forEach(r => { r.style.display = matchesRow(r, qv) ? '' : 'none'; });
+
+    // ordenar visibles por precio si se eligió
+    if ($sort && $sort.value){
+      const visibles = rows.filter(r => r.style.display !== 'none');
+      visibles.sort((a,b) => $sort.value === 'price-asc'
+        ? getPrice(a) - getPrice(b)
+        : getPrice(b) - getPrice(a)
+      );
+      const frag = document.createDocumentFragment();
+      visibles.forEach(r => frag.appendChild(r));
+      tbody.appendChild(frag);
+    }
+  }
+
+  ['input','keyup','change'].forEach(ev => {
+    $q?.addEventListener(ev, apply);
+    $sort?.addEventListener(ev, apply);
+  });
+
+  apply();
+})();
+</script>
+
+</body>
+</html>

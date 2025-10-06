@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comprar | Luxury Car's</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ajustes vista Comprar */
+    .product{ margin:16px 0 24px; }
+    .product .gallery{ display:flex; justify-content:flex-start; align-items:center; }
+    .product .gallery img{
+      width:100%; max-width:560px; aspect-ratio:16/9; object-fit:cover;
+      border-radius:12px; border:1px solid #1f2721; display:block;
+    }
+    @media (max-width: 720px){ .product .gallery{ justify-content:center; } }
+
+    /* Mensaje de éxito más grande */
+    #success-message{ margin: 14px 0 36px; }
+    #success-message h2{ font-size: clamp(1.6rem, 2.4vw, 2.2rem); margin: 0 0 .5rem; }
+    #success-message .lead{ margin:.25rem 0 1rem; opacity:.9; }
+    #success-message img{ width:100%; max-width:800px; border-radius:12px; display:block; }
+    #success-message .kv{ margin:.25rem 0 .75rem; }
+    #success-message .kv strong{ display:inline-block; min-width:7.5rem; }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="container wrap">
+    <a class="brand" href="index.html">
+      <img src="logo-luxurycars.svg" alt="Logo Luxury Car's"><span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
+    <nav id="mainnav" class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="listado_tabla.html">Productos (Tabla)</a>
+      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="comprar.html">Comprar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <h2>Formulario de compra</h2>
+
+  <!-- Selección del auto -->
+  <div id="select-wrapper" class="field full">
+    <label for="auto-select">Selecciona el auto que deseas comprar</label>
+    <select id="auto-select" required></select>
+  </div>
+
+  <!-- Detalles del auto seleccionado -->
+  <div id="auto-info">
+    <p><strong>Auto seleccionado:</strong> <span id="autoActual">—</span></p>
+    <div class="product">
+      <div class="gallery">
+        <img id="auto-image" src="" alt="Auto seleccionado">
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <form id="purchase-form" class="form">
+    <div class="field full">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" required placeholder="Tu nombre completo">
+    </div>
+    <div class="field full">
+      <label for="address">Dirección</label>
+      <input type="text" id="address" required placeholder="Tu dirección de entrega">
+    </div>
+    <div class="field full">
+      <label for="phone">Teléfono</label>
+      <input type="text" id="phone" required placeholder="Tu número de teléfono">
+    </div>
+    <div class="field full">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" required placeholder="Tu correo electrónico">
+    </div>
+    <div class="field full">
+      <label for="payment-method">Método de pago</label>
+      <select id="payment-method" required>
+        <option value="tarjeta">Tarjeta de crédito</option>
+        <option value="efectivo">Efectivo</option>
+      </select>
+    </div>
+    <div class="field full">
+      <label for="total">Total</label>
+      <input type="text" id="total" readonly value="USD 0">
+    </div>
+    <div class="field full">
+      <button type="submit" class="btn">Finalizar compra</button>
+    </div>
+  </form>
+
+  <!-- Éxito -->
+  <div id="success-message" style="display:none">
+    <h2>¡Compra realizada con éxito!</h2>
+    <p class="lead">Gracias por confiar en Luxury Car's. Tu auto será entregado pronto.</p>
+
+    <p class="kv"><strong>Auto comprado:</strong> <span id="success-model"></span></p>
+    <p class="kv"><strong>Precio:</strong> <span id="success-price"></span></p>
+
+    <img id="success-image" src="" alt="Auto comprado">
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="logo-luxurycars.svg" alt="" style="height:24px"><strong></strong>
+    </div>
+    <small>© 2025</small>
+  </div>
+</footer>
+
+<script>
+/* ====== Catálogo y helpers ====== */
+const AUTOS = [
+  { id:'vantage',   label:'Aston Martin Vantage 2023',   price:220000, img:'img/vantage.jpg' },
+  { id:'db11',      label:'Aston Martin DB11 2022',      price:260000, img:'img/db11.jpg' },
+  { id:'continental',label:'Bentley Continental GT 2023',price:280000, img:'img/continental.jpg' },
+  { id:'bentayga',  label:'Bentley Bentayga 2022',       price:300000, img:'img/bentayga.jpg' },
+  { id:'dbx707',    label:'Aston Martin DBX 707 2023',   price:330000, img:'img/dbx707.jpg' },
+  { id:'flyingspur',label:'Bentley Flying Spur 2023',    price:310000, img:'img/flyingspur.jpg' },
+  { id:'roma',      label:'Ferrari Roma 2024',           price:270000, img:'img/roma.jpg' },
+  { id:'911turbo',  label:'Porsche 911 Turbo S 2024',    price:240000, img:'img/911turbo.jpg' },
+  { id:'cullinan',  label:'Rolls-Royce Cullinan 2024',   price:355000, img:'img/cullinan.jpg' },
+  { id:'sf90',      label:'Ferrari SF90 Stradale 2024',  price:490000, img:'img/sf90.jpg' },
+  { id:'aventador', label:'Lamborghini Aventador 2022',  price:400000, img:'img/aventador.jpg' },
+  { id:'gwagon',    label:'Mercedes-AMG G 63 2024',      price:180000, img:'img/gwagon.jpg' },
+  { id:'urus',      label:'Lamborghini Urus 2024',       price:260000, img:'img/urus.jpg' }
+];
+
+const money = v => new Intl.NumberFormat('es-AR',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v);
+const norm  = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+const byId  = id => AUTOS.find(a => a.id === id);
+
+/* ====== Elementos ====== */
+const sel    = document.getElementById('auto-select');
+const lbl    = document.getElementById('autoActual');
+const img    = document.getElementById('auto-image');
+const total  = document.getElementById('total');
+
+/* ====== Poblar selector ====== */
+sel.innerHTML = AUTOS.map(a => `<option value="${a.id}">${a.label}</option>`).join('');
+
+/* ====== Selección inicial: ?auto=  > memoria > primero ====== */
+(function pickInitial(){
+  const qp  = new URLSearchParams(location.search).get('auto');
+  const mem = localStorage.getItem('lastAuto');
+  let chosen = '';
+
+  if (qp) {
+    const exact = byId(qp);
+    if (exact) chosen = exact.id;
+    else {
+      const guess = AUTOS.find(a => norm(a.label).includes(norm(qp)));
+      if (guess) chosen = guess.id;
+    }
+  }
+  if (!chosen && mem) chosen = mem;
+  if (!chosen) chosen = AUTOS[0].id;
+
+  sel.value = chosen;
+})();
+
+/* ====== Sincronizar UI ====== */
+function syncUI(){
+  const item = byId(sel.value) || AUTOS[0];
+  lbl.textContent = item.label;
+  img.src = item.img; img.alt = item.label;
+  total.value = money(item.price);
+  localStorage.setItem('lastAuto', item.id);
+}
+sel.addEventListener('change', syncUI);
+syncUI();
+
+/* ====== Envío ====== */
+document.getElementById('purchase-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Validación mínima
+  const name  = document.getElementById('name').value.trim();
+  const addr  = document.getElementById('address').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !addr || !phone || !email) return;
+
+  const item = byId(sel.value) || AUTOS[0];
+
+  // Ocultar todo menos el mensaje final
+  document.getElementById('purchase-form').style.display = 'none';
+  document.getElementById('auto-info').style.display = 'none';
+  document.getElementById('select-wrapper').style.display = 'none';
+  sel.disabled = true;
+
+  // Completar mensaje de éxito
+  document.getElementById('success-model').textContent = item.label;
+  document.getElementById('success-price').textContent = money(item.price);
+  const sImg = document.getElementById('success-image');
+  sImg.src = item.img; sImg.alt = item.label;
+
+  const successBox = document.getElementById('success-message');
+  successBox.style.display = 'block';
+  successBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
