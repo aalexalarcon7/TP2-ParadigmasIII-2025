@@ -6,6 +6,7 @@
   <title>Comprar | Luxury Car's</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+
     /* Ajustes vista Comprar */
     .product{ margin:16px 0 24px; }
     .product .gallery{ display:flex; justify-content:flex-start; align-items:center; }
@@ -15,7 +16,6 @@
     }
     @media (max-width: 720px){ .product .gallery{ justify-content:center; } }
 
-    /* Mensaje de éxito más grande */
     #success-message{ margin: 14px 0 36px; }
     #success-message h2{ font-size: clamp(1.6rem, 2.4vw, 2.2rem); margin: 0 0 .5rem; }
     #success-message .lead{ margin:.25rem 0 1rem; opacity:.9; }
@@ -33,8 +33,8 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
     <nav id="mainnav" class="nav">
       <a href="index.html">Inicio</a>
-      <a href="listado_tabla.html">Productos (Tabla)</a>
-      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="listado_tabla.html">Especificaciónes</a>
+      <a href="listado_box.html">Modelos</a>
       <a href="comprar.html">Comprar</a>
     </nav>
   </div>
@@ -43,13 +43,13 @@
 <main class="container section">
   <h2>Formulario de compra</h2>
 
-  <!-- Selección del auto -->
+  <!-- Selección auto -->
   <div id="select-wrapper" class="field full">
     <label for="auto-select">Selecciona el auto que deseas comprar</label>
     <select id="auto-select" required></select>
   </div>
 
-  <!-- Detalles del auto seleccionado -->
+  <!-- Detalles del auto -->
   <div id="auto-info">
     <p><strong>Auto seleccionado:</strong> <span id="autoActual">—</span></p>
     <div class="product">
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <!-- Formulario -->
+  <!-- formulario -->
   <form id="purchase-form" class="form">
     <div class="field full">
       <label for="name">Nombre</label>
@@ -80,7 +80,7 @@
     <div class="field full">
       <label for="payment-method">Método de pago</label>
       <select id="payment-method" required>
-        <option value="tarjeta">Tarjeta de crédito</option>
+        <option value="tarjeta">Transferencia Bancaria</option>
         <option value="efectivo">Efectivo</option>
       </select>
     </div>
@@ -93,7 +93,6 @@
     </div>
   </form>
 
-  <!-- Éxito -->
   <div id="success-message" style="display:none">
     <h2>¡Compra realizada con éxito!</h2>
     <p class="lead">Gracias por confiar en Luxury Car's. Tu auto será entregado pronto.</p>
@@ -115,7 +114,7 @@
 </footer>
 
 <script>
-/* ====== Catálogo y helpers ====== */
+/* ====== Catálogo ====== */
 const AUTOS = [
   { id:'vantage',   label:'Aston Martin Vantage 2023',   price:220000, img:'img/vantage.jpg' },
   { id:'db11',      label:'Aston Martin DB11 2022',      price:260000, img:'img/db11.jpg' },

@@ -17,18 +17,18 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
     <nav id="mainnav" class="nav">
       <a href="index.html">Inicio</a>
-      <a href="listado_tabla.html">Productos (Tabla)</a>
-      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="listado_tabla.html">Especificaciónes</a>
+      <a href="listado_box.html">Modelos</a>
       <a href="comprar.html">Comprar</a>
     </nav>
   </div>
 </header>
 
 <main class="container section">
-  <h2>Catálogo — Vista en tarjetas</h2>
-  <p class="lead">Inspirado en la estética de Aston Martin y Bentley: sobrio, legible y elegante.</p>
+  <h2>Modelos</h2>
+  <p class="lead">Encuentre la máquina de sus sueños: sobrio, legible y elegante.</p>
 
-  <!-- CONTROLES: solo búsqueda + ordenar -->
+  <!-- búsqueda y ordenar -->
   <div class="container" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px">
     <input id="q" type="search" placeholder="Buscar modelo o marca…" style="flex:1;min-width:220px" autocomplete="off" spellcheck="false">
     <select id="sort">
@@ -39,7 +39,7 @@
   </div>
 
   <div class="grid" style="margin-top:18px">
-    <!-- EXISTENTES -->
+  
     <article class="card">
       <img class="media" src="img/vantage.jpg" alt="Aston Martin Vantage 2023">
       <div class="body">
@@ -118,7 +118,7 @@
       </div>
     </article>
 
-    <!-- NUEVOS -->
+    <!-- nuevos autos -->
     <article class="card">
       <img class="media" src="img/roma.jpg" alt="Ferrari Roma 2024">
       <div class="body">
@@ -228,19 +228,19 @@
 <script src="app.js"></script>
 
 <script>
-/* === Búsqueda en GRID (prefijo, sin acentos) + reflow siempre === */
+/* busqueda de autos */
 (function(){
   const grid  = document.querySelector('.grid');
   if (!grid) return;
 
   const cards = Array.from(grid.querySelectorAll('.card'));
-  const baseOrder = cards.slice();                 // orden original
-  const $q    = document.getElementById('q');     // input búsqueda
-  const $sort = document.getElementById('sort');  // ordenar (opcional)
+  const baseOrder = cards.slice();                 
+  const $q    = document.getElementById('q');     
+  const $sort = document.getElementById('sort');  
 
   const norm = s => (s||'')
     .toString().toLowerCase()
-    .normalize('NFD').replace(/\p{Diacritic}/gu,'')  // quita acentos
+    .normalize('NFD').replace(/\p{Diacritic}/gu,'')  
     .trim();
 
   const searchText = c => norm(
@@ -255,7 +255,7 @@
     let visibles = [];
     let ocultas  = [];
 
-    // filtrar (prefijo por palabra)
+    // filtrar por palabra
     for (const c of cards){
       if (!qv){
         c.hidden = false;
@@ -277,7 +277,7 @@
       visibles.sort((a,b) => baseOrder.indexOf(a) - baseOrder.indexOf(b));
     }
 
-    // re-apendo SIEMPRE para forzar reflow (soluciona que no aparezcan sin ordenar)
+   
     const frag = document.createDocumentFragment();
     visibles.forEach(v => frag.appendChild(v));
     ocultas.forEach(o => frag.appendChild(o));

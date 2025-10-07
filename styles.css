@@ -259,3 +259,48 @@ hr.sep{ border:0; border-top:1px solid #1c241f; margin:6px 0 10px }
   }
 }
 
+/* Quitar texto de marca al lado del logo (dejamos solo el ícono) */
+.navbar .brand span { display:none !important; }
+
+/* Burger / Nav móvil – compatibilidad extra */
+@media (max-width: 880px){
+  header .nav { display:none; flex-direction:column; gap:10px; background:#0f1613; border-top:1px solid #1c241f; width:100%; text-align:center; padding:10px 0; }
+  header .nav.is-open { display:flex; }
+  .nav-toggle, .burger { z-index:1000; }
+}
+
+/* Enlace “Volver arriba” dentro del menú móvil */
+.nav a.nav-backtotop { opacity:.85; }
+.nav a.nav-backtotop:hover { opacity:1; }
+
+/* Burger / Nav móvil */
+@media (max-width: 880px){
+  header .nav{
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .75rem 1rem 1rem;
+    background: rgba(11,11,13,.97);
+    border-top: 1px solid var(--line);
+    z-index: 999;
+    text-align: center;
+  }
+  header .nav.is-open{ display:flex; }
+  .nav-toggle, .burger{ z-index:1000; }
+}
+
+/* Ocultar cualquier texto residual junto al logo (ej: “…”) */
+.navbar .brand span,
+.navbar .brand .brand-text,
+.navbar .brand .logo-text,
+.navbar .brand .site-name{ display:none !important; }
+
+/* Ocultar el texto de marca del footer en todas las páginas */
+.footer .wrap strong,
+.footer .wrap .brand-text,
+.footer .wrap .logo-text,
+.footer .wrap > div > strong { 
+  display: none !important; 
+}

@@ -18,20 +18,20 @@
 
 <header class="navbar">
   <div class="container wrap">
-    <!-- LOGO -->
+   
     <a class="brand" href="index.html">
       <img src="logo-luxurycars.svg" alt="Logo Luxury Car's">
       <span></span>
     </a>
 
-    <!-- BOTÓN HAMBURGUESA -->
+    <!-- boton burguer -->
     <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Abrir menú">☰</button>
 
-    <!-- MENÚ -->
+    <!-- menu -->
     <nav id="mainnav" class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="listado_tabla.html">Productos (Tabla)</a>
-      <a href="listado_box.html">Productos (Grid)</a>
+     <a href="index.html">Inicio</a>
+      <a href="listado_tabla.html">Especificaciónes</a>
+      <a href="listado_box.html">Modelos</a>
       <a href="comprar.html">Comprar</a>
     </nav>
   </div>
@@ -40,7 +40,7 @@
 <section class="hero" style="--hero-image:url('img/hero.jpg')">
   <div class="inner container">
     <h1>Elegancia y Performance</h1>
-    <p>Explorá una selección curada de vehículos de alta gama inspirada en Aston Martin y Bentley.</p>
+    <p>Explorá una selección curada de vehículos de alta gama.</p>
     <a class="btn" href="listado_box.html">Ver catálogo</a>
     <a class="btn secondary" href="listado_tabla.html">Lista completa</a>
   </div>
@@ -50,195 +50,8 @@
   <h2>Destacados</h2>
   <p class="lead">Ediciones que definen una colección.</p>
 
-  <div class="grid" style="margin-top:18px">
-
-    <!--  Aston Martin Vantage -->
-    <article class="card">
-      <img class="media" src="img/vantage.jpg" alt="Aston Martin Vantage 2023">
-      <div class="body">
-        <span class="tag">Aston Martin</span>
-        <h3 class="title">Vantage 2023</h3>
-        <p class="price">USD 220.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=vantage">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Bentley Continental GT -->
-    <article class="card">
-      <img class="media" src="img/continental.jpg" alt="Bentley Continental GT 2023">
-      <div class="body">
-        <span class="tag">Bentley</span>
-        <h3 class="title">Continental GT 2023</h3>
-        <p class="price">USD 280.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=continental">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Bentley Bentayga -->
-    <article class="card">
-      <img class="media" src="img/bentayga.jpg" alt="Bentley Bentayga 2022">
-      <div class="body">
-        <span class="tag">Bentley</span>
-        <h3 class="title">Bentayga 2022</h3>
-        <p class="price">USD 300.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=bentayga">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Aston Martin DB11 -->
-    <article class="card">
-      <img class="media" src="img/db11.jpg" alt="Aston Martin DB11 2022">
-      <div class="body">
-        <span class="tag">Aston Martin</span>
-        <h3 class="title">DB11 2022</h3>
-        <p class="price">USD 260.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=db11">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Aston Martin DBX 707 -->
-    <article class="card">
-      <img class="media" src="img/dbx707.jpg" alt="Aston Martin DBX 707 2023">
-      <div class="body">
-        <span class="tag">Aston Martin</span>
-        <h3 class="title">DBX 707 2023</h3>
-        <p class="price">USD 330.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=dbx707">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Bentley Flying Spur -->
-    <article class="card">
-      <img class="media" src="img/flyingspur.jpg" alt="Bentley Flying Spur 2023">
-      <div class="body">
-        <span class="tag">Bentley</span>
-        <h3 class="title">Flying Spur 2023</h3>
-        <p class="price">USD 310.000</p>
-        <div class="actions">
-          <a class="btn" href="producto.html?auto=flyingspur">Ver ficha</a>
-          <a class="link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article> <!-- ⬅️ CIERRE QUE FALTABA -->
-
-    <!-- Ferrari Roma -->
-    <article class="card" data-brand="Ferrari" data-name="Roma 2024" data-price="270000">
-      <img class="media" src="img/roma.jpg" alt="Ferrari Roma 2024">
-      <div class="body">
-        <span class="badge new">Nuevo</span>
-        <span class="tag">Ferrari</span>
-        <h3 class="title">Roma 2024</h3>
-        <p class="price">USD 270.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_roma.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Porsche 911 Turbo S -->
-    <article class="card" data-brand="Porsche" data-name="911 Turbo S 2024" data-price="240000">
-      <img class="media" src="img/911turbo.jpg" alt="Porsche 911 Turbo S 2024">
-      <div class="body">
-        <span class="badge new">Nuevo</span>
-        <span class="tag">Porsche</span>
-        <h3 class="title">911 Turbo S 2024</h3>
-        <p class="price">USD 240.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_911turbo.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Rolls-Royce Cullinan -->
-    <article class="card" data-brand="Rolls-Royce" data-name="Cullinan 2024" data-price="355000">
-      <img class="media" src="img/cullinan.jpg" alt="Rolls-Royce Cullinan 2024">
-      <div class="body">
-        <span class="badge new">Nuevo</span>
-        <span class="tag">Rolls-Royce</span>
-        <h3 class="title">Cullinan 2024</h3>
-        <p class="price">USD 355.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_cullinan.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Ferrari SF90 -->
-    <article class="card" data-brand="Ferrari" data-name="SF90 Stradale 2024" data-price="490000">
-      <img class="media" src="img/sf90.jpg" alt="Ferrari SF90 Stradale 2024">
-      <div class="body">
-        <span class="badge new">Nuevo</span>
-        <span class="tag">Ferrari</span>
-        <h3 class="title">SF90 Stradale 2024</h3>
-        <p class="price">USD 490.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_sf90.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Lamborghini Aventador -->
-    <article class="card" data-brand="Lamborghini" data-name="Aventador 2022" data-price="400000">
-      <img class="media" src="img/aventador.jpg" alt="Lamborghini Aventador 2022">
-      <div class="body">
-        <span class="tag">Lamborghini</span>
-        <h3 class="title">Aventador 2022</h3>
-        <p class="price">USD 400.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_aventador.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Mercedes AMG G 63 -->
-    <article class="card" data-brand="Mercedes-Benz" data-name="AMG G 63 2024" data-price="180000">
-      <img class="media" src="img/gwagon.jpg" alt="Mercedes-AMG G 63 2024">
-      <div class="body">
-        <span class="tag">Mercedes-Benz</span>
-        <h3 class="title">AMG G 63 2024</h3>
-        <p class="price">USD 180.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_gwagon.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Lamborghini Urus -->
-    <article class="card" data-brand="Lamborghini" data-name="Urus 2024" data-price="260000">
-      <img class="media" src="img/urus.jpg" alt="Lamborghini Urus 2024">
-      <div class="body">
-        <span class="tag">Lamborghini</span>
-        <h3 class="title">Urus 2024</h3>
-        <p class="price">USD 260.000</p>
-        <div class="actions">
-          <a class="btn" href="producto_urus.html">Ver ficha</a>
-          <a class="link buy-link" href="comprar.html">Comprar</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
+  <!-- Grid vacio se rellena aleatoriamente por JS-->
+  <div id="destacados" class="grid" style="margin-top:18px"></div>
 </main>
 
 <footer class="footer">
@@ -251,48 +64,61 @@
   </div>
 </footer>
 
+<!-- Splash -->
 <script>
   const splash = document.getElementById('splash');
   const inner  = document.querySelector('.splash-inner');
-
   function hideSplash(){ splash.classList.add('hidden'); }
-
   inner?.addEventListener('animationend', (e) => {
     if (e.animationName === 'splash-enter') setTimeout(hideSplash, 350);
   });
-
-  // respaldo
   setTimeout(hideSplash, 3000);
 </script>
 
+<!-- aleatorios -->
 <script>
-/* Remover cualquier rastro de "Favorito" en las cards del inicio */
-document.addEventListener('DOMContentLoaded', () => {
-  // 1) Quitar por clases/atributos típicos
-  const selectors = [
-    '.favorite', '.favorito', '.fav', '.fav-btn', '.favorite-btn',
-    '.pill.favorite', '[data-fav]', '[aria-label*="Favorit"]'
+(function(){
+  const AUTOS = [
+    { marca:'Aston Martin',   modelo:'Vantage 2023',        precio:220000, img:'img/vantage.jpg' },
+    { marca:'Aston Martin',   modelo:'DB11 2022',           precio:260000, img:'img/db11.jpg' },
+    { marca:'Bentley',        modelo:'Continental GT 2023', precio:280000, img:'img/continental.jpg' },
+    { marca:'Bentley',        modelo:'Bentayga 2022',       precio:300000, img:'img/bentayga.jpg' },
+    { marca:'Aston Martin',   modelo:'DBX 707 2023',        precio:330000, img:'img/dbx707.jpg' },
+    { marca:'Bentley',        modelo:'Flying Spur 2023',    precio:310000, img:'img/flyingspur.jpg' },
+    { marca:'Ferrari',        modelo:'Roma 2024',           precio:270000, img:'img/roma.jpg' },
+    { marca:'Porsche',        modelo:'911 Turbo S 2024',    precio:240000, img:'img/911turbo.jpg' },
+    { marca:'Rolls-Royce',    modelo:'Cullinan 2024',       precio:355000, img:'img/cullinan.jpg' },
+    { marca:'Ferrari',        modelo:'SF90 Stradale 2024',  precio:490000, img:'img/sf90.jpg' },
+    { marca:'Lamborghini',    modelo:'Aventador 2022',      precio:400000, img:'img/aventador.jpg' },
+    { marca:'Mercedes-Benz',  modelo:'AMG G 63 2024',       precio:180000, img:'img/gwagon.jpg' },
+    { marca:'Lamborghini',    modelo:'Urus 2024',           precio:260000, img:'img/urus.jpg' }
   ];
-  document.querySelectorAll(selectors.join(',')).forEach(el => el.remove());
 
-  // 2) Quitar botones/enlaces dentro de .actions cuyo texto contenga "favorito"
-  document.querySelectorAll('.card .actions').forEach(actions => {
-    Array.from(actions.children).forEach(el => {
-      const txt = (el.textContent || '').trim().toLowerCase();
-      if (txt.includes('favorito') || /★|☆|⭐/.test(txt)) el.remove();
-    });
-  });
+  const money = v => new Intl.NumberFormat('es-AR',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v);
+  const el = document.getElementById('destacados'); if (!el) return;
 
-  // 3) Por si quedó algún ícono con title/aria-label "favorito"
-  document.querySelectorAll('.card [title], .card [aria-label]').forEach(el => {
-    const meta = ((el.getAttribute('title')||'') + (el.getAttribute('aria-label')||'')).toLowerCase();
-    if (meta.includes('favorito')) el.remove();
-  });
-});
+  //elige 6 al azar sin repetir
+  const N = 7, pool = AUTOS.slice(), picks = [];
+  while (picks.length < Math.min(N, pool.length)) {
+    picks.push(pool.splice(Math.floor(Math.random()*pool.length), 1)[0]);
+  }
+
+  el.innerHTML = picks.map(a => `
+    <article class="card">
+      <img class="media" src="${a.img}" alt="${a.marca} ${a.modelo}" loading="lazy"
+           onerror="this.src='https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&auto=format&fit=crop&w=1200'">
+      <div class="body">
+        <span class="tag">${a.marca}</span>
+        <h3 class="title">${a.modelo}</h3>
+        <p class="price">${money(a.precio)}</p>
+      </div>
+    </article>
+  `).join('');
+})();
 </script>
-
 
 <script src="app.js"></script>
 
 </body>
 </html>
+

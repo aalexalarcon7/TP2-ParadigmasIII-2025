@@ -22,8 +22,8 @@
     <!-- MENÚ -->
     <nav id="mainnav" class="nav">
       <a href="index.html">Inicio</a>
-      <a href="listado_tabla.html">Productos (Tabla)</a>
-      <a href="listado_box.html">Productos (Grid)</a>
+      <a href="listado_tabla.html">Especificaciónes</a>
+      <a href="listado_box.html">Modelos</a>
       <a href="comprar.html">Comprar</a>
     </nav>
   </div>
@@ -31,8 +31,8 @@
 
 
   <main class="container section">
-    <h2>Listado de productos — Tabla</h2>
-    <p class="lead">Vista tipo concesionaria con columnas clave. Podés buscar, filtrar o ordenar los resultados.</p>
+    <h2>Listado de productos</h2>
+    <p class="lead">Superdeportivos listos para su próximo garaje. Podés buscar, filtrar o ordenar los resultados.</p>
 
 <!-- CONTROLES (Tabla) — Solo una búsqueda -->
 <div class="toolbar" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0">
@@ -71,7 +71,7 @@
 
           <tr data-brand="Aston Martin" data-name="DB11 2022" data-price="260000">
             <td>Aston Martin</td><td>DB11</td><td>2022</td><td>V12 5.2</td><td>3.9 s</td><td>AT</td>
-            <td>USD 260.000</td><td><span class="badge">Reservado</span></td>
+            <td>USD 260.000</td><td><span class="badge">Disponible</span></td>
             <td><a class="btn" href="producto_db11.html">Ver ficha</a></td>
           </tr>
 
@@ -141,19 +141,18 @@
   </main>
 
   <footer class="footer">
-    <div class="container wrap">
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="logo-luxurycars.svg" alt="Logo" style="height:24px" />
-        <strong></strong>
+  <div class="container wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="logo-luxurycars.svg" alt="" style="height:24px">
       </div>
       <small>© 2025. Proyecto académico.</small>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 
-<script>
-/* === Buscador/Orden en TABLA (prefijo, sin acentos) === */
+
+<script> /* Buscador/Orden */
 (function(){
   const table = document.getElementById('tablaAutos') || document.querySelector('table');
   if (!table || !table.tBodies.length) return;
@@ -161,12 +160,12 @@
   const tbody = table.tBodies[0];
   const rows  = Array.from(tbody.rows);
 
-  const $q    = document.getElementById('qTabla');    // input de búsqueda
-  const $sort = document.getElementById('sortTabla'); // ordenar por precio (opcional)
+  const $q    = document.getElementById('qTabla');   
+  const $sort = document.getElementById('sortTabla'); 
 
   const norm = s => (s||'')
     .toString().toLowerCase()
-    .normalize('NFD').replace(/\p{Diacritic}/gu,'')   // quita acentos
+    .normalize('NFD').replace(/\p{Diacritic}/gu,'')   
     .trim();
 
   const rowText = row => norm(Array.from(row.cells).map(td => td.textContent).join(' '));
@@ -174,12 +173,12 @@
   function matchesRow(row, q){
     const nq = norm(q);
     if (!nq) return true;
-    // prefijo por palabra (con una letra ya filtra)
+  
     return rowText(row).split(/\s+/).some(w => w.startsWith(nq));
   }
 
   function getPrice(row){
-    // busca la celda que contiene “USD …”
+  
     const priceCell = Array.from(row.cells).find(td => /usd/i.test(td.textContent));
     return +(priceCell?.textContent.replace(/[^\d]/g,'') || 0);
   }
@@ -188,7 +187,7 @@
     const qv = $q?.value || '';
     rows.forEach(r => { r.style.display = matchesRow(r, qv) ? '' : 'none'; });
 
-    // ordenar visibles por precio si se eligió
+    // ordenar visibles por precio si se eligio
     if ($sort && $sort.value){
       const visibles = rows.filter(r => r.style.display !== 'none');
       visibles.sort((a,b) => $sort.value === 'price-asc'
